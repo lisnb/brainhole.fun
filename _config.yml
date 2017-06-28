@@ -1,30 +1,52 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Site Info
+title:              "老洞"
+description:        "老洞是一个分享脑洞的地方"
+# google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
+# google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: 老洞
-email: brainhole.fun@outlook.com
-description: > # this means to ignore newlines until "baseurl:"
-  分享你的老洞！
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://brainhole.fun" # the base hostname & protocol for your site
-github_username: lisnb   
-# instagram_username: jekyllrb
-# twitter_username:   jekyllrb
+# Author Info
+author_name:        "阿荡" # Your name here
+author_email:       brainhole.fun@outlook.com # Your email here
+author_gravatar:    5a6027cf564fa32ef226d71905f057ec # Your Gravatar md5 hash here for logo
+# twitter_username:   HeiswayiNrird # Your Twitter username here
+github_username:    lisnb # Your GitHub username here
 
-# Build settings
-markdown: kramdown
-# deployment
+# Site Settings
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+# permalink:          /:title # Post permalink
+timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            false  # enables support for mathjax - set to false to disable
+
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+gems:
+  - jekyll-sitemap
+
 host: 0.0.0.0
-port: 5000
+port: 4000
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

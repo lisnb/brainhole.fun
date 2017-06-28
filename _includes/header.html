@@ -1,9 +1,16 @@
-<header class="site-header">
+<aside class="logo">
 
-	<div class="wrapper">
+	{% if page.url == '/index.html' or page.url == '/' %}
+		{% assign link = '/about' %}
+		{% assign prompt = 'About the Author' %}
+	{% else %}
+		{% assign link = '/' %}
+		{% assign prompt = 'Back to Home' %}
+	{% endif %}
 
-		<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+	<a href="{{ link | prepend: site.baseurl }}">
+		<img src="http://www.gravatar.com/avatar/{{ site.author_gravatar }}.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">{{ prompt }}</span>
 
-	</div>
-
-</header>
+</aside>
